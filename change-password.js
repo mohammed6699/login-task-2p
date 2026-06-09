@@ -6,7 +6,8 @@ const inputFields = [
         type: "password",
         placeholder: "Saudi_Falcon_91",
         hasButton: true,
-        icon: "./assets/Suffix.svg"
+        icon: "./assets/Suffix.svg",
+        name: 'password'
     },
     {
         id: "pin-num",
@@ -14,16 +15,17 @@ const inputFields = [
         type: "password",
         placeholder: "إعادة كلمة السر",
         hasButton: true,
-        icon: "./assets/arrow-down-01.svg"
+        icon: "./assets/arrow-down-01.svg",
+        name: 'pin-code'
     }
 ];
 
-function createInputComponent({ id, label, type, placeholder, hasButton, icon }) {
+function createInputComponent({ id, label, type, placeholder, hasButton, icon, name }) {
     return `
         <div class="pass-style">
             <label for="${id}" id="user-label">${label}</label>
             <div class="password-container">
-                <input id="${id}" type="${type}" placeholder="${placeholder}" />
+                <input id="${id}" type="${type}" placeholder="${placeholder}" name="${name}"/>
                 ${hasButton ? `
                     <button type="button" class="toggle-password" id="btn-pass">
                         <img src="${icon}"/>

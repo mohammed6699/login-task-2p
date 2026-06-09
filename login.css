@@ -92,6 +92,12 @@ text-align: right;
     border: none;
     cursor: pointer;
 }
+.btn-one:hover{
+    background-color: #9B5F01;
+}
+.btn-two:hover{
+    background-color: #E5E7EB;
+}
 .hr-line{
     margin-top: 32px;
     width: 100%;
