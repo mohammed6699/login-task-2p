@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F9FAFB;
+    margin: 0;
+    font-family: sans-serif;
+}
+#main-layout{
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 100vh;
+    padding: 20px;
+}
+.title{
+font-weight: 700;
+font-style: Bold;
+letter-spacing: 0%;
+text-align: right;
+}
+#img-container{
+    width: 484px;
+    height: 726px;
+    
+}
+#image{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: contain;
+}
+#user-data{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+#inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+#login-form{
+    display: flex;
+    flex-direction: column;
+    width: 588px;
+    height: 752px;
+    padding: 80px 40px;
+    border-radius: 16px;
+    gap: 32px;
+    background-color: #FFFFFF;
+}
+#logo{
+    direction: rtl;
+}
+#logo img{
+    width: 95px;
+    height: 70px;
+}
+.action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.btn-one{
+    width: 127px;
+    flex-shrink: 0;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #B87B02;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+}
+.btn-text{
+    margin: 0;
+}
+.btn-two{
+    width: 139px;
+    max-width: 139px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #F3F4F6;
+    color: #161616;
+    border: none;
+    cursor: pointer;
+}
+.hr-line{
+    margin-top: 32px;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: #B8EACB;
+}
+.text{
+    text-align:right;
+    margin:0;
+}
+.text a{
+    color: #1B8354;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1100px) {
+    #img-container {
+        display: none;
+    }
+    #main-layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #login-form {
+        width: 100%;
+        max-width: 588px;
+    }
+    .action{
+        display: flex;
+        flex-direction: row;
+    }
+    .btn-one{
+        height: 40px;
+        max-width: 127px;
+    }
+    .btn-two{  
+        width: 139px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #main-layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #login-form {
+        padding: 40px 20px;
+    }
+    .action {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .action{
+        display: flex;
+        flex-direction: row;
+    }
+    .hr-line{
+        margin-top: 32px;
+        width: 100%;
+        height: 1px;
+        border: none;
+        background-color: #B8EACB;
+    }
+    .btn-one{
+        max-height: 40px;
+        width: 127px;
+    }
+    .btn-two{
+        width: 139px;
+        height: 40px;
+    }
+}

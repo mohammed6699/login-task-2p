@@ -1,0 +1,64 @@
+
+body{
+    background-color: #F9FAFB;
+}
+#logo{
+    direction: rtl;
+}
+#logo img{
+    width: 95px;
+    height: 70px;
+}
+#user-label{
+    width: 100%;
+    height: 20px;
+    text-align: right;
+    display: block;
+    margin-bottom: 8px;
+}
+.div-style{
+    display: flex; 
+    flex-direction: column; 
+}
+#email, #pass, #pin-num{
+    background-color: #F3F4F6;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    padding-right: 12px;
+}
+#email::placeholder{
+    font-family: IBM Plex Sans Arabic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+.password-container {
+    position: relative;
+    width: 100%;
+}
+.toggle-password {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggle-password img {
+    width: 20px;
+    height: 20px; 
+}
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
