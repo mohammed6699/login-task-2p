@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Toggle Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    .password-container {
+        position: relative;
+        width: 250px;
+    }
+    input[type="password"],
+    input[type="text"] {
+        width: 100%;
+        padding: 10px 35px 10px 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    .toggle-password {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    .toggle-password img {
+        width: 20px;
+        height: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Password Input with Eye Toggle</h2>
+
+<div class="password-container">
+    <input type="password" id="password" placeholder="Enter password" aria-label="Password">
+    <button type="button" class="toggle-password" aria-label="Show password" id="togglePassword">
+        <!-- Eye icon (open) -->
+        <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Show">
+    </button>
+</div>
+
+<script>
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const eyeOpen = "https://cdn-icons-png.flaticon.com/512/709/709612.png";
+    const eyeClosed = "https://cdn-icons-png.flaticon.com/512/709/709699.png";
+
+    togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        togglePassword.querySelector('img').src = isPassword ? eyeClosed : eyeOpen;
+        togglePassword.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+    });
+</script>
+
+</body>
+</html>
