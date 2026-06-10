@@ -19,7 +19,7 @@ const passFields = [
         placeholder: "إعادة كلمة السر",
         hasButton: true,
         icon: "./assets/arrow-down-01.svg",
-        name: 'pin-code',
+        name: 'New-Password',
         pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
         matching: "pass"
     }
