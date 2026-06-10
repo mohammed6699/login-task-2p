@@ -44,10 +44,19 @@
     const isValid = config.every(field => {
         const input = document.getElementById(field.id);
         if(!input) return false;
-        return field.pattern 
+        let isPatternValid = field.pattern 
             ? field.pattern.test(input.value)
             : input.value.length > 0;
-    });
+            // check for pass matches
+            let matching = true;
+            if(field.matching){
+                let passIputs = document.getElementById(field.matching);
+                if(passIputs){
+                    matching = (input.value === passIputs.value)
+                }
+            }
+            return isPatternValid && matching
+        });
     
     submitButton.disabled = !isValid;
     submitButton.style.backgroundColor = isValid ? '#B87B02' : '#9B5F01';
