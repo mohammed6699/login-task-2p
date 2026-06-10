@@ -40,13 +40,6 @@ function createInputComponent({ id, label, type, placeholder, hasButton, icon, n
         </div>
     `;
 }
-function checkPass(){
-    let newPass = document.getElementById(`${passFields[0].id}`);
-    let acceptedPass = document.getElementById(`${passFields[1].id}`);
-    if(newPass.value === acceptedPass.value){
-        
-    }
-}
 function renderInputs() {
     const container = document.getElementById('inputs-container');
     if (!container) return;
