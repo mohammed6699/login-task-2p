@@ -1,5 +1,6 @@
-const inputFields = [
-   
+import {handleFocus, handleBlur, validateSubmit} from './assets/shared-functions.js';
+
+const passFields = [
     {
         id: "pass",
         label: "ادخل كلمة السر الجديدة",
@@ -7,7 +8,9 @@ const inputFields = [
         placeholder: "Saudi_Falcon_91",
         hasButton: true,
         icon: "./assets/Suffix.svg",
-        name: 'password'
+        name: 'password',
+        pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+        matching: null
     },
     {
         id: "pin-num",
@@ -16,7 +19,9 @@ const inputFields = [
         placeholder: "إعادة كلمة السر",
         hasButton: true,
         icon: "./assets/arrow-down-01.svg",
-        name: 'pin-code'
+        name: 'pin-code',
+        pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+        matching: "pass"
     }
 ];
 
@@ -35,11 +40,18 @@ function createInputComponent({ id, label, type, placeholder, hasButton, icon, n
         </div>
     `;
 }
+function checkPass(){
+    let newPass = document.getElementById(`${passFields[0].id}`);
+    let acceptedPass = document.getElementById(`${passFields[1].id}`);
+    if(newPass.value === acceptedPass.value){
+        
+    }
+}
 function renderInputs() {
     const container = document.getElementById('inputs-container');
     if (!container) return;
 
-    const html = inputFields.map(field => createInputComponent(field)).join('');
+    const html = passFields.map(field => createInputComponent(field)).join('');
     container.innerHTML = html;
     const toggleButtons = container.querySelectorAll('#btn-pass');
     toggleButtons.forEach(btn => {
@@ -51,7 +63,15 @@ function renderInputs() {
                 input.type = 'password';
             }
         });
+        
     });
+    passFields.forEach(field => {
+        let input = document.getElementById(field.id);
+        input.addEventListener('focus', handleFocus);
+        input.addEventListener('blur', (e) => {handleBlur(e, passFields)});
+        input.addEventListener('input', () => {validateSubmit(passFields, 'submit-btn')})
+    })
+    validateSubmit(passFields, 'submit-btn')
 }
 
 document.addEventListener('DOMContentLoaded', renderInputs);
