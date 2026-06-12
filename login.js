@@ -73,7 +73,7 @@ function renderInputs() {
         })
         passBtn.addEventListener('click', (event) => {
             event.preventDefault()
-            window.location.assign("http://127.0.0.1:5500/change-password.html")
+            window.location.replace("http://127.0.0.1:5500/change-password.html")
         })
 }
 document.addEventListener('DOMContentLoaded', renderInputs);
