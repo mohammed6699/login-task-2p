@@ -8,7 +8,7 @@ const inputFields = [
         placeholder: "ادخل عنوان بريدك الإلكتروني",
         hasButton: false,
         name: 'Farm-Name',
-        pattern: /^[a-z0-9_-]{3,15}$/,
+        pattern: /^[A-Za-z0-9_-]{3,15}$/,
         matching: null,
         isRequired: true
     },
@@ -29,7 +29,7 @@ const inputFields = [
         placeholder: '1234567890',
         hasButton: false,
         name: 'Commercial-register-Number',
-        pattern: /^\d{8}$/,
+        pattern: /^\d{10}$/,
         matching: null,
         isRequired: true
     },
@@ -238,6 +238,67 @@ function renderInputs() {
             divData.style.display = 'none';
         })
        }
+
+    // Modal Close Logic
+    const errorModalOverlay = document.getElementById('error-modal-overlay');
+    const closeBtn = document.getElementById('x-btn');
+
+    function closeModal() {
+        if (errorModalOverlay) {
+            errorModalOverlay.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    if (errorModalOverlay) {
+        errorModalOverlay.addEventListener('click', (e) => {
+            if (e.target === errorModalOverlay) {
+                closeModal();
+            }
+        });
+    }
+
+    // Form Submission Logic
+    const signupForm = document.getElementById('user-data');
+    if (signupForm) {
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const isValid = inputFields.every(field => {
+                const input = document.getElementById(field.id);
+                if (!input) return false;
+                
+                let isPatternValid = field.pattern 
+                    ? field.pattern.test(input.value)
+                    : input.value.length > 0;
+                
+                let matching = true;
+                if (field.matching) {
+                    const targetInput = document.getElementById(field.matching);
+                    if (targetInput) {
+                        matching = (input.value === targetInput.value);
+                    }
+                }
+                
+                return isPatternValid && matching;
+            });
+
+            if (isValid) {
+                // If valid, redirect to success page
+                window.location.href = './register-success.html';
+            } else {
+                // If invalid, show the error modal
+                if (errorModalOverlay) {
+                    errorModalOverlay.style.display = 'flex';
+                    document.body.classList.add('no-scroll');
+                }
+            }
+        });
+    }
 
 }
 document.addEventListener('DOMContentLoaded', renderInputs);

@@ -343,6 +343,72 @@
     }
 
 }
+body.no-scroll {
+    overflow: hidden;
+}
+
+#error-model{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 370px;
+    border-radius: 16px;
+    padding: 24px;
+    gap: 8px;
+    position: relative;
+}
+#close-div {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+#x-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #64748B;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#x-btn:hover {
+    color: #1F2A37;
+}
+#content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#image-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+#error-title{
+    font-family: IBM Plex Sans Arabic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0;
+    color: #1F2A37;
+}
+#error-desc{
+    font-family: IBM Plex Sans Arabic;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    color: #384250;
+}
 @media screen and (max-width: 430px){
      #image-container{
         display: none;
