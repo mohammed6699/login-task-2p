@@ -57,7 +57,7 @@
             }
             return isPatternValid && matching
         });
-    
-    submitButton.disabled = !isValid;
+    // to show the error model
+    // submitButton.disabled = !isValid; 
     submitButton.style.backgroundColor = isValid ? '#B87B02' : '#9B5F01';
 }
