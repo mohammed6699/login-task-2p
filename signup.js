@@ -8,7 +8,7 @@ const inputFields = [
         placeholder: "ادخل عنوان بريدك الإلكتروني",
         hasButton: false,
         name: 'Farm-Name',
-        pattern: /^[A-Za-z0-9_-]{3,15}$/,
+        pattern: /^[A-Za-z0-9_-\s]{3,15}$/,
         matching: null,
         isRequired: true
     },
