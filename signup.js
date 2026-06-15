@@ -129,6 +129,7 @@ function renderInputs() {
     
     let passBtn = document.getElementById('forget-pass-btn')
     const container = document.getElementById('inputs-container');
+    let sumbitFarmBtn = document.getElementById('submit-btn')
     if (!container) return;
 
     // const html = inputFields.map(field => createInputComponent(field))
@@ -299,6 +300,16 @@ function renderInputs() {
             }
         });
     }
-
+    // set farm data in local storage
+    sumbitFarmBtn.addEventListener('click', () => {
+        let farmData = {};
+         inputFields.forEach(field => {
+            let input = document.getElementById(field.id);
+            if(input){
+                farmData[field.name] = input.value
+            }
+            localStorage.setItem('FarmData', JSON.stringify(farmData))
+         })
+    })
 }
 document.addEventListener('DOMContentLoaded', renderInputs);
