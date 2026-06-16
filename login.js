@@ -49,6 +49,9 @@ function createInputComponent({ id, label, type, placeholder, hasButton, icon, n
 function renderInputs() {
     let passBtn = document.getElementById('forget-pass-btn')
     const container = document.getElementById('inputs-container');
+    let loginBtn = document.getElementById('submit-btn');
+    let loginData = JSON.parse(localStorage.getItem('FarmData'));
+    console.log(loginData)
     if (!container) return;
 
     const html = inputFields.map(field => createInputComponent(field)).join('');
@@ -72,8 +75,23 @@ function renderInputs() {
             input.addEventListener('input', () => {validateSubmit(inputFields, 'submit-btn')})
         })
         passBtn.addEventListener('click', (event) => {
-            event.preventDefault()
+            event.preventDefault();
             window.location.replace("http://127.0.0.1:5500/change-password.html")
+        })
+        loginBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            let emailInput = document.getElementById('email').value;
+            let passInput = document.getElementById('pass').value;
+            let pinNum = document.getElementById('pin-num').value;
+            if(loginData){
+                if(emailInput === loginData['Email'] 
+                    && passInput === loginData['Password'] 
+                    && pinNum === loginData['IBAN-Number']){
+                        window.location.replace('profile.html')
+                }else{
+                    alert('unKnow user')
+                }
+            }
         })
 }
 document.addEventListener('DOMContentLoaded', renderInputs);

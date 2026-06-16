@@ -4,11 +4,11 @@ const inputFields = [
     {
         id: "farm-name",
         label: "اسم المزرعة",
-        type: "text",
+        type: "email",
         placeholder: "ادخل عنوان بريدك الإلكتروني",
         hasButton: false,
-        name: 'Farm-Name',
-        pattern: /^[A-Za-z0-9_-\s]{3,15}$/,
+        name: 'Email',
+        pattern: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
         matching: null,
         isRequired: true
     },
