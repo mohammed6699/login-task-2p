@@ -305,8 +305,9 @@ function renderInputs() {
         let farmData = {};
          inputFields.forEach(field => {
             let input = document.getElementById(field.id);
+            // let imgInput = document.getElementById()
             if(input){
-                farmData[field.name] = input.value
+                farmData[field.name] = input.value;
             }
             localStorage.setItem('FarmData', JSON.stringify(farmData))
          })
