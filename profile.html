@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات المزرعة</title>
+    <link rel="stylesheet" href="./profile.css"/>
+    <link rel="stylesheet" href="./components/farmData.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header id="nav-bar">
+        <!-- right side -->
+        <div id="right-side-div">
+            <div>
+                <img src="./assets/SFC Logo.svg" alt="logo-image"/>
+            </div>
+            <div id="nav-tags">
+                <ul id="nav-list">
+                    <li class="list-ele"><span>عن النادي</span></li>
+                    <li class="list-ele">الفاعليات</li>
+                    <li class="list-ele">هدد</li>
+                    <li class="list-ele">لمتجر</li>
+                    <li class="list-ele">الخدمات</li>
+                    <li class="list-ele">المركز الاعلامي</li>
+                    <li class="list-ele">تواصل معانا</li>
+                </ul>
+            </div>
+        </div>
+        <!-- left side -->
+         <div id="left-side-div">
+            <button id="shop-btn">
+                <img src="./assets/Leading Icon.svg" alt="Leading Icon"/>
+            </button>
+            <button id="translation-btn">
+                EN
+            </button>
+            <div id="farm-profile">
+                <img src="./assets/User Icon.svg" alt="User profile"/>
+                <p id="farm-name"></p>
+            </div>
+            
+         </div>
+    </header>
+    <!-- dynamic part in the page -->
+    <main id="main-data">
+        <div id="top-div">
+            <p id="bread-crumb">الرئيسية  >  حسابي</p>
+            <button id="save-btn" type="button"><p class="btn-text">حفظ التغييرات</p></button>
+        </div>
+        <div id="content-layout">
+            <aside id="side-bar">
+                <div id="user-img">
+                    <div id="upload">
+                        <img src="./assets/User Icon.svg" alt="User profile"/>
+                        <button id="upload-btn" type="btn"><img src="./assets/Item Icon.svg"/></button>
+                    </div>
+                </div>
+                <div id="side-bar-container"></div>
+                <div id="logout-div">
+                    <img src="./assets/Icon.svg" alt="logout icon" id="logout-img"/>
+                    <button id="logout-btn" type="button"><p id="logout-text">تسجيل الخروج</p></button>
+            </div>
+            </aside>
+            <div id="dynamic-data"></div>
+        </div>
+    </main>
+    <footer id="footer-section">
+        <!-- right side -->
+         <div id="right-side-section">
+            <p class="footer-right-section-text">اشترك في النشرة البريدية</p>
+            <div id="email-container">
+                <input type="email" id="email-input" placeholder="آكتب بريدك الالكتروني"/>
+                <button type="button" id="email-btn">اشترك</button>
+            </div>
+            <p class="join-us">انضم إلينا على صفحات التواصل الاجتماعي</p>
+            <div id="social-media">
+                <a href="#" class="links"><i class="fa-brands fa-square-linkedin"></i></a>
+                <a href="#" class="links"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="links"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="links"><img src="./assets/arrow.svg"/></a>
+            </div>
+            <div id="tags">
+                <a href="#" class="tags-link">الفعاليات</a>
+                <a href="#" class="tags-link">التذاكر</a>
+                <a href="#" class="tags-link">الشروط والأحكام</a>
+                <a href="#" class="tags-link">الشكاوى والاقتراحات</a>
+                <a href="#" class="tags-link">الأسئلة الشائعة</a>
+                <a href="#" class="tags-link">سياسات الخصوصية</a>
+            </div>
+            <h3 class="copy-rights">جميع الحقوق محفوظة لهيئة الحكومة الرقمية © 2024</h3>
+         </div>
+         <!-- left side -->
+          <div id="left-side-section">
+                <div class="contact">
+                    <div class="contact-data">
+                        <div>
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="phone">
+                            <p style="margin: 0;">رقم الهاتف</p>
+                            <p style="margin: 0;">920023291</p>
+                        </div>
+                    </div>
+                    <div class="contact-data">
+                        <div>
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div class="phone">
+                            <p style="margin: 0;">البريد الإلكتروني</p>
+                            <p style="margin: 0;">info@sfc.org.sa</p>
+                        </div>
+                    </div>
+                    <div class="contact-data">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="phone">
+                            <p style="margin: 0;">الموقع </p>
+                            <p style="margin: 0;">المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="app">
+                    <p class="app-text">حمل تطبيق نادي الصقور علي جوالك</p>
+                </div>
+                <div class="app-icon">
+                    <div class="logo-app">
+                        <div class="logo-img">
+                            <img src="./assets/Group.svg" />
+                        </div>
+                        <div class="logo-text">
+                            <p style="font-size: 10px; text-align: left;">GET IT ON</p>
+                            <p>Google Play</p>
+                        </div>
+                    </div>
+                    <div class="logo-app">
+                        <div class="logo-img">
+                            <img src="./assets/_Group_.svg" />
+                        </div>
+                        <div class="logo-text">
+                            <p style="font-size: 10px; text-align: left;">Download on the</p>
+                            <p style="text-align: left;">App Store</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="web-logo">
+                    <img src="./assets/SFC Logo.svg"/>
+                </div>
+          </div>
+          <div id="bottom-border"></div>
+    </footer>
+    <script src="./profile.js" type="module"></script>
+    <script src="./components/FarmData.js"></script>
+</body>
+</html>
